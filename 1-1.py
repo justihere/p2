@@ -1,4 +1,3 @@
-import operator
 
 class Rectangle():
 
@@ -6,6 +5,16 @@ class Rectangle():
     def __init__(self, length, width):
         self.length = length
         self.width = width
+
+    def setter(self, a, b):
+        if (0 < a < 20) and (0 < b < 20):
+            self.__lenght = a
+            self.__height = b
+        else:
+            raise ValueError("Values out of range!")
+
+    def getter(self):
+        return self.__lenght, self.__height
 
     def get_lenght(self):
         return  self.length
@@ -28,12 +37,7 @@ class Rectangle():
         print('Square = ', per)
 
 
-rec = Rectangle(float(1.0), float(1.0))
+rec = Rectangle(4.3, 3)
+rec.Perymetr(rec.length, rec.width)
+rec.Square(rec.length, rec.width)
 
-if operator.and_(rec.length > 0.0, rec.width < 20.0) :
-
-    print(rec.length)
-    print(rec.width)
-
-    rec.Perymetr(rec.length, rec.width)
-    rec.Square(rec.length, rec.width)
